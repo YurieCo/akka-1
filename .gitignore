@@ -1,0 +1,24 @@
+
+/*.project
+/*.classpath
+target
+.settings
+/*.iml
+.factorypath
+logs/
+
+bin
+# Eclipse artifacts
+.settings
+.classpath
+.project
+target/
+
+# IDEA artifacts
+*.iml
+*.ipr
+*.iws
+.idea
+out
+test-output
+pom.xml
