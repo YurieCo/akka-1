@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration debug="true">
+  
+ 
+    <property name="log_name" value="client"/>
+     
+    <appender name="FILE" class= "ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/app/logs/${log_name}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/app/logs/bak/${log_name}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>500MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</Pattern>
+            <charset>UTF-8</charset>
+        </encoder>   
+        <append>false</append>
+        <prudent>false</prudent>
+    </appender>
+ 
+
+  <root level="INFO">             
+    <appender-ref ref="FILE" />   
+  </root>    
+    
+
+</configuration>
