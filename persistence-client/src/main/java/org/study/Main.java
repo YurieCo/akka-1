@@ -30,11 +30,11 @@ public class Main {
 	    								.create(PersistentActor.class)
 	    							,"persistentactor") ;
 		
-//	    Arrays
-//	    	.asList(new String[]{"hello 0.","hello 1.","hello 2."})
-//	    	.stream()
-//	    	.parallel()
-//	    	.forEach(s->persistentactor.tell(s,ActorRef.noSender()));
+	    Arrays
+	    	.asList(new String[]{"hello 0.","hello 1.","hello 2."})
+	    	.stream()
+	    	.parallel()
+	    	.forEach(s->persistentactor.tell(s,ActorRef.noSender()));
 	     
 	    	
 	    

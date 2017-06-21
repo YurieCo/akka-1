@@ -22,3 +22,4 @@ target/
 out
 test-output
 pom.xml
+*dependency-reduced-pom.xml
