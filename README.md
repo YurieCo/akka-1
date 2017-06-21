@@ -6,7 +6,8 @@
 
 #### remote 
 remote子工程包括client和server两部分。
-#####server
+
+1.server
 server通过以下配置对外提供配置。相当于http服务容器启动一个web服务。
     
     remote {
@@ -16,7 +17,8 @@ server通过以下配置对外提供配置。相当于http服务容器启动一�
 	      port = 2552
 	    }
 	}
-#####client	
+	
+2.client	
 client调用的时候通过以下语句进行远程调用
 
     ActorSelection remoteActor = getContext().actorSelection("akka.tcp://remote-server@127.0.0.1:2552/user/producer") ;
@@ -89,7 +91,8 @@ akka可以配置logback，但是logback格式打出来的信息，缺了router�
 ####cluster
 
 cluster同样包括client和server两部分。
-#####server
+
+1.server
 server通过include "application"的方式和client贡献application.conf的配置，同时又实现了服务端的个性化配置。以下公用配置，remote.netty.tcp.port通常会被启动参数覆盖。集群的leader会从seed-nodes里面选出。
       
     remote { 
@@ -109,7 +112,8 @@ server通过include "application"的方式和client贡献application.conf的配�
      java  -jar -Dakka.remote.netty.tcp.port=2552 D:\github\akka\cluster-server\target\cluster-server-0.0.1-SNAPSHOT.jar 
      
 
-#####client
+
+2.client
 配置，定义了一个router,注意这是一个group.group是需要定义routees.paths。pool不需要。启动2个服务端，客户端发送3个消息，会自动负载到2个节点上去。
 
      akka.actor.deployment {
